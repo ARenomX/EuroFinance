@@ -130,4 +130,4 @@ def risklist():
         risks.append(ind.risk_SD(a))
     return risks
         
-    
+#day_predict_MkII(1)

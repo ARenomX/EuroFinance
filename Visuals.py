@@ -18,9 +18,10 @@ def plotstock(real,smooth,name):
     plt.title(name,fontsize=16, fontweight='bold')
     plt.plot(real,'r-', label = 'Real Values')
     plt.plot(smooth, 'b--', label = 'Smoothed Values')
-    plt.xlabel('Time (days)',fontsize=14)
+    plt.xlabel('Time',fontsize=14)
     plt.ylabel('Value (€)',fontsize=14)
     plt.legend(fontsize=14)
     plt.show()
+    
     
     

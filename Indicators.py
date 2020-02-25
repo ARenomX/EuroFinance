@@ -20,9 +20,16 @@ def risk (serie, n):
     return sum(varvar)
 
 def risk_SD (serie):
-    #Calculates a ris based on the standard deviation of the series with
+    #Calculates a risk based on the standard deviation of the series with
     #respect to it's smoothed mean.
     smooth = fil.KF(serie, 0.05)
+    squares = [(serie[i]-smooth[i])**2 for i in range(len(smooth))]
+    return sum(squares)/len(squares)
+
+def risk_SD_int(serie):
+    #Calculates a risk based on the standard deviation of the series with
+    #respect to it's smoothed mean for an intraday series
+    smooth = fil.KF(serie, 0.005)
     squares = [(serie[i]-smooth[i])**2 for i in range(len(smooth))]
     return sum(squares)/len(squares)
 
